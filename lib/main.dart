@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'test.dart';
-
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -92,10 +92,6 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               TextField(
                 controller: _ipController,
-                inputFormatters: [
-                  MyInputFormatters.ipAddressInputFilter(),
-                  IpAddressInputFormatter()
-                ],
                 decoration: const InputDecoration(
                   labelText: 'Enter IP Address',
                   border: OutlineInputBorder(),
@@ -113,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
